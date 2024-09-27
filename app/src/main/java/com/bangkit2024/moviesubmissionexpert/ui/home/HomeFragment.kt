@@ -2,6 +2,7 @@ package com.bangkit2024.moviesubmissionexpert.ui.home
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -93,6 +94,7 @@ class HomeFragment : Fragment() {
         }
 
         binding.tvViewAllNowPlaying.setOnClickListener {
+            Log.d("HomeFragment", "Yea")
             startActivity(Intent(requireActivity(), NowPlayingActivity::class.java))
         }
     }
