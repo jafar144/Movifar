@@ -99,6 +99,10 @@ class DetailActivity : AppCompatActivity() {
                 detailViewModel.insertWatchListMovie(watchListMovie)
             }
         }
+
+        binding.ivBack.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
     }
 
     private fun setupDetailMovie(detailMovie: DetailMovie) {
