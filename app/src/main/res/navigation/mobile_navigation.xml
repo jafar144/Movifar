@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.bangkit2024.moviesubmissionexpert.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_ticket"
+        android:name="com.bangkit2024.moviesubmissionexpert.ui.ticket.TicketFragment"
+        android:label="@string/ticket"
+        tools:layout="@layout/fragment_ticket" />
+
+    <fragment
+        android:id="@+id/navigation_watch_list"
+        android:name="com.bangkit2024.watch_list.ui.WatchListFragment"
+        android:label="@string/watch_list"
+        tools:layout="@layout/fragment_watch_list" />
+</navigation>

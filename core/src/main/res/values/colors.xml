@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="bg_black">#181A20</color>
+    <color name="grey">#E0E0E0</color>
+
+    <color name="bg_disable_chip">#7C7C7C</color>
+    <color name="stroke_disable_chip">#7C7C7C</color>
+
+    <color name="card_border">#4F5463</color>
+    <color name="card_dark">#1F222A</color>
+
+    <color name="red_light">#FE3323</color>
+
+    <color name="txt_grey">#B2B1B1</color>
+    <color name="stroke_grey">#4E4E4E</color>
+</resources>

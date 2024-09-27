@@ -1,0 +1,21 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.MovieSubmissionExpert" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/black</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="circleImageView">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="roundedImage7">
+        <item name="cornerSize">7%</item>
+    </style>
+
+    <style name="roundedImage15">
+        <item name="cornerSize">15%</item>
+    </style>
+
+</resources>

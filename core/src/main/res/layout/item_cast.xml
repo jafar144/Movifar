@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="70dp"
+    android:layout_marginEnd="12dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_item_poster_cast"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/roundedImage15"
+        tools:src="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/tv_item_original_name_cast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/open_sans_semi_bold"
+        android:maxLines="2"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        tools:text="Herwin Novianto" />
+
+    <TextView
+        android:id="@+id/tv_item_character_cast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/open_sans_semi_bold"
+        android:maxLines="1"
+        android:textAlignment="center"
+        android:textColor="@color/txt_grey"
+        android:textSize="10sp"
+        tools:text="Hehe"
+        tools:ignore="SmallSp" />
+
+</LinearLayout>

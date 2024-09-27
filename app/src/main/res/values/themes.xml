@@ -1,0 +1,30 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.MovieSubmissionExpert" parent="Theme.Material3.DayNight.NoActionBar">
+
+    </style>
+
+    <style name="Theme.MovieSubmissionExpert.BgBlack" parent="Theme.MovieSubmissionExpert">
+        <item name="background">@color/bg_black</item>
+        <item name="android:statusBarColor">@color/bg_black</item>
+        <item name="android:navigationBarColor">@color/black</item>
+    </style>
+
+    <style name="Theme.MovieSubmissionExpert.BgRed" parent="Theme.MovieSubmissionExpert">
+        <item name="background">@color/red_light</item>
+        <item name="android:statusBarColor">@color/red_light</item>
+    </style>
+    
+    <style name="circleImageView">
+        <item name="cornerSize">50%</item>
+    </style>
+    
+    <style name="roundedImage7">
+        <item name="cornerSize">7%</item>
+    </style>
+
+    <style name="roundedImage15">
+        <item name="cornerSize">15%</item>
+    </style>
+
+</resources>

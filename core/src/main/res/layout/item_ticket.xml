@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="8dp"
+    android:backgroundTint="@color/card_dark"
+    app:cardCornerRadius="8dp"
+    app:contentPadding="16dp"
+    app:contentPaddingBottom="10dp"
+    app:strokeColor="@color/card_border">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_poster_movie_ticket"
+            android:layout_width="60dp"
+            android:layout_height="70dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/roundedImage15"
+            tools:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/tv_title_movie_ticket"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/open_sans_bold"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_poster_movie_ticket"
+            app:layout_constraintTop_toTopOf="@id/iv_poster_movie_ticket"
+            tools:text="Deadpool" />
+
+        <TextView
+            android:id="@+id/tv_date_movie_ticket"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/open_sans_semi_bold"
+            android:textColor="@color/txt_grey"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/tv_title_movie_ticket"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_movie_ticket"
+            tools:text="23 Aug 2024" />
+
+        <TextView
+            android:id="@+id/tv_dot"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/open_sans_semi_bold"
+            android:text="@string/dot"
+            android:textColor="@color/txt_grey"
+            app:layout_constraintStart_toEndOf="@id/tv_date_movie_ticket"
+            app:layout_constraintTop_toTopOf="@id/tv_date_movie_ticket" />
+
+        <TextView
+            android:id="@+id/tv_time_movie_ticket"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/open_sans_semi_bold"
+            android:textColor="@color/txt_grey"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/tv_dot"
+            app:layout_constraintTop_toTopOf="@id/tv_dot"
+            tools:text="13:50 - 15:50" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/card_border"
+            app:layout_constraintTop_toBottomOf="@id/iv_poster_movie_ticket" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans_semi_bold"
+            android:text="@string/remind_me"
+            android:textColor="@color/txt_grey"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/sw_remind_me"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/sw_remind_me" />
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/sw_remind_me"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:minHeight="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            app:thumbIconSize="6dp"
+            app:thumbTint="@color/white"
+            app:trackDecorationTint="@drawable/my_switch_track"
+            app:trackTint="@drawable/my_switch_track" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

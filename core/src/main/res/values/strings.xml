@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="chip_date">%1$s, %2$d %3$s</string>
+    <string name="caster_character">(%1$s)</string>
+    <string name="dot">•</string>
+    <string name="remind_me">Remind me 1 hours earlier</string>
+</resources>
