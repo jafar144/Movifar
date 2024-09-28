@@ -161,6 +161,11 @@ class DetailActivity : AppCompatActivity() {
         binding.rvCast.adapter = castAdapter
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        binding.rvCast.adapter = null
+    }
+
     companion object {
         const val EXTRA_ID_MOVIE = "extra_id_movie"
     }

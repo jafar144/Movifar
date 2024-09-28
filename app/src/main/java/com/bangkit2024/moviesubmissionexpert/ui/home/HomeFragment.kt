@@ -155,6 +155,8 @@ class HomeFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        binding.rvComingSoon.adapter = null
+        binding.rvNowPlaying.adapter = null
         _binding = null
     }
 }

@@ -92,4 +92,9 @@ class NowPlayingActivity : AppCompatActivity() {
         skeletonNowPlaying.shimmerDurationInMillis = 1000L
         skeletonNowPlaying.maskCornerRadius = 50F
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        binding.rvNowPlaying.adapter = null
+    }
 }

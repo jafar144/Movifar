@@ -88,8 +88,9 @@ class ItemTicketsFragment : Fragment() {
         binding.rvTickets.adapter = movieTicketAdapter
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding.rvTickets.adapter = null
         _binding = null
     }
 
