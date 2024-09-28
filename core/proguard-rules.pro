@@ -1,21 +1,22 @@
-# Add project specific ProGuard rules here.
-# You can control the set of applied configuration files using the
-# proguardFiles setting in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
+-dontwarn java.lang.invoke.StringConcatFactory
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+-keep class com.bangkit2024.core.di.** { *; }
+-keepclassmembers class com.bangkit2024.core.di.** { *; }
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+-keep class com.bangkit2024.core.data.** { *; }
+-keepclassmembers class com.bangkit2024.core.data.** { *; }
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+-keep class com.bangkit2024.core.domain.model.** { *; }
+-keepclassmembers class com.bangkit2024.core.domain.model.** { *; }
+
+-keep class com.bangkit2024.core.domain.usecase.** { *; }
+-keepclassmembers class com.bangkit2024.core.domain.usecase.** { *; }
+
+-keep class com.bangkit2024.core.domain.repository.** { *; }
+-keepclassmembers class com.bangkit2024.core.domain.repository.** { *; }
+
+-keep class com.bangkit2024.core.ui.** { *; }
+-keepclassmembers class com.bangkit2024.core.domain.ui.** { *; }
+
+-keep class com.bangkit2024.core.utils.** { *; }
+-keepclassmembers class com.bangkit2024.core.utils.** { *; }
