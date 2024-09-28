@@ -1,7 +1,6 @@
 package com.bangkit2024.core.di
 
 import android.content.Context
-import android.os.Build
 import androidx.room.Room
 import com.bangkit2024.core.data.source.local.room.MovieTicketRoomDatabase
 import com.bangkit2024.core.utils.Contants
@@ -14,7 +13,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import net.sqlcipher.database.SQLiteDatabase
 import net.sqlcipher.database.SupportFactory
-import java.security.SecureRandom
 import javax.inject.Singleton
 
 @Module

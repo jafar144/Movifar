@@ -16,10 +16,12 @@
         android:label="@string/ticket"
         tools:layout="@layout/fragment_ticket" />
 
+    <!--suppress AndroidDomInspection, NavigationFile -->
     <fragment
         android:id="@+id/navigation_watch_list"
         android:name="com.bangkit2024.watch_list.ui.WatchListFragment"
         android:label="@string/watch_list"
         app:moduleName="watch_list"
         tools:layout="@layout/fragment_watch_list" />
+
 </navigation>
