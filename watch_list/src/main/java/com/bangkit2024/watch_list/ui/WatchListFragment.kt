@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
-import com.bangkit2024.core.domain.model.WatchList
 import com.bangkit2024.core.ui.WatchListAdapter
 import com.bangkit2024.moviesubmissionexpert.databinding.FragmentWatchListBinding
 import com.bangkit2024.moviesubmissionexpert.di.WatchListModuleDependencies
@@ -24,6 +23,8 @@ class WatchListFragment : Fragment() {
 
     private var _binding: FragmentWatchListBinding? = null
     private val binding get() = _binding!!
+
+    private lateinit var adapter: WatchListAdapter
 
     private val viewModel: WatchListViewModel by viewModels {
         viewModelFactory
@@ -55,12 +56,20 @@ class WatchListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupRecyclerView()
+        adapter = WatchListAdapter { movie ->
+            val intentToDetail = Intent(requireContext(), DetailActivity::class.java)
+            intentToDetail.putExtra(DetailActivity.EXTRA_ID_MOVIE, movie.idMovie)
+            startActivity(intentToDetail)
+        }
+        binding.rvWatchList.adapter = adapter
 
         viewModel.getWatchListMovie().observe(viewLifecycleOwner) { watchListMovie ->
             if (watchListMovie.isNotEmpty()) {
-                setupDataWatchList(watchListMovie)
+//                setupDataWatchList(watchListMovie)
+                adapter.submitList(watchListMovie)
                 binding.tvNullWatchList.visibility = View.GONE
             } else {
+                adapter.submitList(listOf())
                 binding.tvNullWatchList.visibility = View.VISIBLE
             }
         }
@@ -69,16 +78,6 @@ class WatchListFragment : Fragment() {
     private fun setupRecyclerView() {
         val gridLayoutManager = GridLayoutManager(requireContext(), 3)
         binding.rvWatchList.layoutManager = gridLayoutManager
-    }
-
-    private fun setupDataWatchList(watchList: List<WatchList>)  {
-        val adapter = WatchListAdapter { movie ->
-            val intentToDetail = Intent(requireContext(), DetailActivity::class.java)
-            intentToDetail.putExtra(DetailActivity.EXTRA_ID_MOVIE, movie.idMovie)
-            startActivity(intentToDetail)
-        }
-        adapter.submitList(watchList)
-        binding.rvWatchList.adapter = adapter
     }
 
     override fun onDestroyView() {

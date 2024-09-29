@@ -27,7 +27,7 @@ class TicketFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val pagerAdapter = PagerAdapter(requireActivity())
+        val pagerAdapter = PagerAdapter(childFragmentManager, viewLifecycleOwner.lifecycle)
         binding.viewPager.adapter = pagerAdapter
 
         val viewPager = binding.viewPager.apply {
@@ -41,6 +41,7 @@ class TicketFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        binding.viewPager.adapter = null
         _binding = null
     }
 

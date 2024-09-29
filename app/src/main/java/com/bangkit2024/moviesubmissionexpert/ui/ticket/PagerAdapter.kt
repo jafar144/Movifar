@@ -2,12 +2,14 @@ package com.bangkit2024.moviesubmissionexpert.ui.ticket
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
 class PagerAdapter(
-    activity: FragmentActivity
-) : FragmentStateAdapter(activity) {
+    fragmentManager: FragmentManager,
+    lifecycle: Lifecycle
+) : FragmentStateAdapter(fragmentManager, lifecycle) {
 
     override fun createFragment(position: Int): Fragment {
         val fragment = ItemTicketsFragment()

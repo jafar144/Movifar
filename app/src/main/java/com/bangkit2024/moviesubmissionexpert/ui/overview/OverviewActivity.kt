@@ -135,7 +135,8 @@ class OverviewActivity : AppCompatActivity() {
                     cryptoObject = null
                 )
             } else {
-                showToast("No biometric support. You can use sandi")
+//                showToast("No biometric support. You can use sandi")
+                moveIntoSuccessWithData()
             }
         }
     }

@@ -38,8 +38,8 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setupRecyclerView()
         setupOnBackPressed()
+        setupRecyclerView()
 
         val movieId = intent.getIntExtra(EXTRA_ID_MOVIE, 0)
 
@@ -98,10 +98,6 @@ class DetailActivity : AppCompatActivity() {
                 showToast("Added to Watchlist")
                 detailViewModel.insertWatchListMovie(watchListMovie)
             }
-        }
-
-        binding.ivBack.setOnClickListener {
-            onBackPressedDispatcher.onBackPressed()
         }
     }
 
