@@ -1,12 +1,5 @@
 package com.bangkit2024.core.domain.model
 
-data class SearchMovie(
-    val page: Int? = null,
-    val totalPages: Int? = null,
-    val results: List<ItemSearch?>? = null,
-    val totalResults: Int? = null
-)
-
 data class ItemSearch(
     val overview: String? = null,
     val originalLanguage: String? = null,

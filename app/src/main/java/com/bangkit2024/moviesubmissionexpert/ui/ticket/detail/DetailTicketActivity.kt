@@ -1,6 +1,8 @@
 package com.bangkit2024.moviesubmissionexpert.ui.ticket.detail
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Color
 import android.os.Build
@@ -32,8 +34,6 @@ class DetailTicketActivity : AppCompatActivity() {
         ) { isGranted ->
             if (isGranted) {
                 showToast("Permission Granted")
-            } else {
-                showToast("Permission Denied")
             }
         }
 
@@ -54,7 +54,12 @@ class DetailTicketActivity : AppCompatActivity() {
         }
 
         if (Build.VERSION.SDK_INT >= 33) {
-            requestPermissionLauncher.launch(android.Manifest.permission.POST_NOTIFICATIONS)
+            if (checkSelfPermission(
+                    Manifest.permission.POST_NOTIFICATIONS
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
+                requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+            }
         }
 
         if (!intent.hasExtra(EXTRA_ID_TICKET)) {

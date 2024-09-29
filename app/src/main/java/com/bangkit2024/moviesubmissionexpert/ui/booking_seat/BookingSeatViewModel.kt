@@ -83,7 +83,7 @@ class BookingSeatViewModel : ViewModel() {
             TimeAvailable("15:50"),
             TimeAvailable("17:50"),
             TimeAvailable("19:50"),
-            TimeAvailable("21:50"),
+            TimeAvailable("22:50"),
         )
     }
 
