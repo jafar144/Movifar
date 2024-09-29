@@ -11,7 +11,9 @@ import com.bangkit2024.core.domain.model.WatchList
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 
-class WatchListAdapter : ListAdapter<WatchList, WatchListAdapter.MyViewHolder>(WATCH_LIST_DIFF_CALLBACK) {
+class WatchListAdapter(
+    private val onItemClick: (WatchList) -> Unit,
+) : ListAdapter<WatchList, WatchListAdapter.MyViewHolder>(WATCH_LIST_DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val binding =
@@ -23,7 +25,7 @@ class WatchListAdapter : ListAdapter<WatchList, WatchListAdapter.MyViewHolder>(W
         holder.bind(getItem(position))
     }
 
-    class MyViewHolder(
+    inner class MyViewHolder(
         private val binding: ItemWatchListBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: WatchList) {
@@ -34,6 +36,8 @@ class WatchListAdapter : ListAdapter<WatchList, WatchListAdapter.MyViewHolder>(W
                 .into(binding.ivItemPosterMovie)
 
             binding.tvItemTitle.text = item.titleMovie
+
+            itemView.setOnClickListener { onItemClick(item) }
         }
     }
 

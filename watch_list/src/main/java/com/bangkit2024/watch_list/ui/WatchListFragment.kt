@@ -1,5 +1,6 @@
 package com.bangkit2024.watch_list.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import com.bangkit2024.core.domain.model.WatchList
 import com.bangkit2024.core.ui.WatchListAdapter
 import com.bangkit2024.moviesubmissionexpert.databinding.FragmentWatchListBinding
 import com.bangkit2024.moviesubmissionexpert.di.WatchListModuleDependencies
+import com.bangkit2024.moviesubmissionexpert.ui.detail.DetailActivity
 import com.bangkit2024.watch_list.di.DaggerWatchListComponent
 import dagger.hilt.android.EntryPointAccessors
 import javax.inject.Inject
@@ -70,13 +72,18 @@ class WatchListFragment : Fragment() {
     }
 
     private fun setupDataWatchList(watchList: List<WatchList>)  {
-        val adapter = WatchListAdapter()
+        val adapter = WatchListAdapter { movie ->
+            val intentToDetail = Intent(requireContext(), DetailActivity::class.java)
+            intentToDetail.putExtra(DetailActivity.EXTRA_ID_MOVIE, movie.idMovie)
+            startActivity(intentToDetail)
+        }
         adapter.submitList(watchList)
         binding.rvWatchList.adapter = adapter
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
+        binding.rvWatchList.adapter = null
         _binding = null
     }
 

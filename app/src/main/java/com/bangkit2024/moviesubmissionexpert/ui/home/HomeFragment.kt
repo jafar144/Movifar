@@ -29,8 +29,8 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var skeletonNowPlaying: Skeleton
-    private lateinit var skeletonUpComing: Skeleton
+    private var skeletonNowPlaying: Skeleton? = null
+    private var skeletonUpComing: Skeleton? = null
 
     private val homeViewModel: HomeViewModel by viewModels()
 
@@ -53,18 +53,18 @@ class HomeFragment : Fragment() {
             if (result != null) {
                 when (result) {
                     is Result.Loading -> {
-                        skeletonNowPlaying.showSkeleton()
+                        skeletonNowPlaying?.showSkeleton()
                     }
 
                     is Result.Success -> {
-                        skeletonNowPlaying.showOriginal()
+                        skeletonNowPlaying?.showOriginal()
 
                         val nowPlayingMovies = result.data
                         setupDataNowPlaying(nowPlayingMovies)
                     }
 
                     is Result.Error -> {
-                        skeletonNowPlaying.showOriginal()
+                        skeletonNowPlaying?.showOriginal()
                         showToast(result.error)
                     }
                 }
@@ -75,18 +75,18 @@ class HomeFragment : Fragment() {
             if (result != null) {
                 when (result) {
                     is Result.Loading -> {
-                        skeletonUpComing.showSkeleton()
+                        skeletonUpComing?.showSkeleton()
                     }
 
                     is Result.Success -> {
-                        skeletonUpComing.showOriginal()
+                        skeletonUpComing?.showOriginal()
 
                         val comingSoonMovies = result.data
                         setupDataComingSoon(comingSoonMovies)
                     }
 
                     is Result.Error -> {
-                        skeletonUpComing.showOriginal()
+                        skeletonUpComing?.showOriginal()
                         showToast(result.error)
                     }
                 }
@@ -142,19 +142,21 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupSkeleton() {
-        skeletonNowPlaying.maskColor = R.color.card_dark
-        skeletonNowPlaying.shimmerColor = R.color.stroke_grey
-        skeletonNowPlaying.shimmerDurationInMillis = 1000L
-        skeletonNowPlaying.maskCornerRadius = 50F
+        skeletonNowPlaying?.maskColor = R.color.card_dark
+        skeletonNowPlaying?.shimmerColor = R.color.stroke_grey
+        skeletonNowPlaying?.shimmerDurationInMillis = 1000L
+        skeletonNowPlaying?.maskCornerRadius = 50F
 
-        skeletonUpComing.maskColor = R.color.card_dark
-        skeletonUpComing.shimmerColor = R.color.stroke_grey
-        skeletonUpComing.shimmerDurationInMillis = 1000L
-        skeletonUpComing.maskCornerRadius = 50F
+        skeletonUpComing?.maskColor = R.color.card_dark
+        skeletonUpComing?.shimmerColor = R.color.stroke_grey
+        skeletonUpComing?.shimmerDurationInMillis = 1000L
+        skeletonUpComing?.maskCornerRadius = 50F
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
+        skeletonUpComing = null
+        skeletonNowPlaying = null
         binding.rvComingSoon.adapter = null
         binding.rvNowPlaying.adapter = null
         _binding = null
