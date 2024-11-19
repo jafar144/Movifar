@@ -10,7 +10,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/jafar144/Movifar">
-    <img src="assets/images/logo_app.png" alt="Logo" width="100" height="100">
+    <img src="screenshots/app_logo.png" alt="Logo" width="100" height="100">
   </a>
 
   <h3 align="center">Movifar</h3>
@@ -88,8 +88,8 @@ and receive tickets complete with barcodes for easy check-ins. Notifications ens
 <!-- CONRTIBUTORS -->
 ### Contributors:
 
-<a href="https://github.com/jafar144/AshStory/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=jafar144/AshStory" alt="contrib.rocks image" />
+<a href="https://github.com/jafar144/Movifar/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=jafar144/Movifar" alt="contrib.rocks image" />
 </a>
 
 <!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
@@ -101,7 +101,7 @@ Ja'far - ajib.aiwa@gmail.com
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/jafar144/AshStory.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/jafar144/Movifar.svg?style=for-the-badge
 [contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/jafarrmu/
